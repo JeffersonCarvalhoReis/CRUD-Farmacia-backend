@@ -21,6 +21,8 @@ export class Produto {
   @Min(0)
   quantidade: number;
 
-  @ManyToOne(() => Categoria, (categoria) => categoria.produto)
+  @ManyToOne(() => Categoria, (categoria) => categoria.produto, {
+    onDelete: 'SET NULL',
+  })
   categoria: Categoria;
 }
